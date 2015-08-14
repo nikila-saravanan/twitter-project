@@ -2,7 +2,7 @@ require 'twitter'
 require 'yaml'
 
 class TwitterApi
-  attr_reader :client
+  attr_reader :client, :get_name
 
   def initialize
     keys = YAML.load_file('application.yml')
@@ -28,7 +28,12 @@ class TwitterApi
     client.followers(user).first(10)
   end
 
+  def get_name(username)
+    client.user(username).name
+  end
+
   def collect_tweets_from(user)
-    client.search("from:#{user}").take(100).map {|tweet| "#{tweet.text}"}
+    client.search("from:#{user}").map {|tweet| "#{tweet.text}"}
+    # binding.pry
   end
 end
