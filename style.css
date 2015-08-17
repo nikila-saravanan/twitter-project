@@ -31,7 +31,7 @@ form {
   font-family: 'Fredoka One';
 }
 
-input {
+input.username {
   background:#D6FFEB;
   border-width: 0px;
   border-radius: 3px;
@@ -39,10 +39,23 @@ input {
   height: 20px;
 }
 
+input.usertext {
+  background:#D6FFEB;
+  border-width: 0px;
+  border-radius: 3px;
+  padding: 10px;
+  box-sizing: border-box;
+  width: 83%;
+  height: 55px;
+  border-radius: 7px;
+}
+
 textarea {
   background-color:#D6FFEB;
   border-width: 0px;
   margin: 0 auto;
+  padding: 10px;
+  box-sizing: border-box;
   border-radius: 7px;
   resize: none;
 }

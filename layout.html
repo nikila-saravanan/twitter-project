@@ -12,27 +12,40 @@
 
   <div align="center">
     <form>
-      <font color="#A6CF53">I want to talk to </font><input type="text" name="twitter_username"> <button class="talk">talk!</button>
+      <font color="#A6CF53">I want to talk to </font><input class="username" type="text" name="twitter_username"> <button class="talk">talk!</button>
     </form>
   </div>
 
   <div class="screen_container">
 
-    <textarea class="chat_display" rows="25" cols="100" disabled>
-      This is display text and now you can't change it!
+    <textarea id="chat_display" class="chat_display" rows="25" cols="100" disabled>
+      
     </textarea>
 
   </div>
+
   <div class="interactive_container">
 
-    <textarea class="chat_submit" rows="4" cols="100">
-      submit text here
-    </textarea> 
+    <input class="usertext" type="text" id="input_user"> </input>
 
-    <button class="submit"> Submit </button>
+    <button name="current_message" class="submit" onclick="print_text()"> Submit </button>
     
   </div>
 
   </div>
 </body>
 </html>
+
+<script>
+
+    var text_block = "";
+
+    function print_text() {
+      var new_message = document.getElementById('input_user').value;
+      text_block += "You: " + new_message + "\n"; 
+      document.getElementById("chat_display").innerHTML = text_block; 
+      document.getElementById('input_user').value = "";
+
+    }
+
+</script>
